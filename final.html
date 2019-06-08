@@ -1,0 +1,429 @@
+﻿ <!DOCTYPE html>
+
+  <html lang="en-US">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Complaint Registration</title>
+    <link rel="shortcut icon"  href="images/favicon1.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+
+     <!-- Bootstrap Core CSS -->
+    <link  href="css/bootstrap.min.css" rel="stylesheet">
+    <link  href="css/media.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ico-moon.css">
+
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <!-- Icomoon -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+
+    <!-- CSS:: FONTS -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
+        <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAijdgCBqSv5QlNzK8qtvFp36JRfv8zvQM",
+        authDomain: "firstproject-fd739.firebaseapp.com",
+        databaseURL: "https://firstproject-fd739.firebaseio.com",
+        projectId: "firstproject-fd739",
+        storageBucket: "firstproject-fd739.appspot.com",
+        messagingSenderId: "1039959291145",
+        appId: "1:1039959291145:web:2e04412f7d7980e4"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    
+      function writeData()
+      {
+          var name = document.getElementById("namefield").value;
+          firebase.database().ref(name).set({
+              
+              email:document.getElementById("email").value,
+              natureofcomplaint:document.getElementById("noc").value,
+              address:document.getElementById("address").value,
+              mobileno:document.getElementById("mobileno").value,
+              wardno:document.getElementById("wn").value,
+              complaintdetails:document.getElementById("com_det").value
+             
+          });
+      }
+    </script>
+
+ 		<div  class="container">
+        <h3 class="text-center color-b">Form </h3>
+       <div class="clearfix"></div>
+       <p class="text-center fs1"> </p>
+        <div class="clearfix"></div>
+       <div class="mT20 bcw1">
+
+       <form method="post" action="#">
+	   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	   
+			 <div class="row">
+                                   <div class="col-md-5 col-sm-12 col-xs-12">
+                                         <div class="form-group">
+                                            <label>Name: </label>
+                                          </div>
+                                          </div>
+                                         <div class="col-md-7 col-sm-12 col-xs-12">
+
+                                           <div class="form-group">
+                                            <input type="text" class="form-control" id="namefield" id= placeholder="" required>
+                                            </div>
+                                        <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>			 
+						
+
+					
+									  
+                    
+					   <div class="row">
+                                   <div class="col-md-5 col-sm-12 col-xs-12">
+                                         <div class="form-group">
+                                            <label>*Email: </label>
+                                          </div>
+                                          </div>
+                                         <div class="col-md-7 col-sm-12 col-xs-12">
+
+                                           <div class="form-group">
+                                            <input type="text" class="form-control" id="email"  placeholder="" required>
+                                            </div>
+                                        <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+							  
+                      
+							  
+							  	 <div class="row">
+                      <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                               <label>*Nature of Complaint : </label>
+                             </div>
+                             </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                               <select name="selector" id="noc" class="form-control">
+											  <option> Select  </option> 
+                                              <option> Road  </option>
+                                              <option>Street Light</option>
+                                              <option>Housing Society</option>
+                                              <option>Sevage Problem </option>
+											                         <option>Rain Water Problem  </option>
+                                              
+										  </select>
+                             </div>
+                             <div class="help-block with-errors"></div>
+                           </div>
+                       </div>
+					  
+
+		
+						<div class="row">
+                                   <div class="col-md-5 col-sm-12 col-xs-12">
+                                         <div class="form-group">
+                                            <label>Address: </label>
+                                          </div>
+                                          </div>
+                                         <div class="col-md-7 col-sm-12 col-xs-12">
+
+                                           <div class="form-group">
+                                            <input type="text" class="form-control" id="address"  placeholder="" required>
+                                            </div>
+                                        <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>		
+							
+		
+			
+					  
+					   </div>
+					 
+                 
+
+                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				 
+							<div class="row">
+                      <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                               <label>*Mobile No.: </label>
+                             </div>
+                             </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                               <input type="text" class="form-control" id="mobileno" pattern="^\d{10}$" maxlength="10" placeholder="" required>
+                             </div>
+                             <div class="help-block with-errors"></div>
+                           </div>
+                       </div>
+					  		
+				 			  
+							  	 <div class="row">
+                      <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                               <label>Ward No.: </label>
+                             </div>
+                             </div>
+                          <div class="col-md-7 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                  <select name="selector" id="wn" class="form-control">
+                                             <option value="" disabled="">-- Select --</option>
+                                              <option >A</option>
+                                              <option>B</option>
+                                              <option>C</option>
+                                              <option>D</option>
+                                              <option>E</option>
+                                              <option>F</option>
+                                              <option>G</option>
+                                              <option>H</option>
+                                              <option>L</option>
+                                              <option>M</option>
+                                              <option>N</option>
+                                              <option>P</option>
+                                              <option>R</option>
+                                              <option>S</option>
+                                              <option>T</optiom>                     
+                      </select>
+                      </div>
+                      </div>
+					  </div>
+					  
+								
+				 
+				 	
+					   
+					   <div class="row">
+                             <div class="col-md-5 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                      <label>Complaint Details : </label>
+                                    </div>
+                                    </div>
+                                   <div class="col-md-7 col-sm-12 col-xs-12">
+
+                                     <div class="form-group">
+                                      <textarea class="form-control" rows="3" id="com_det" placeholder="" required=""></textarea>
+                                      </div>
+                                    <div class="help-block with-errors"></div>
+                                  </div>
+                             </div>
+					   
+					 
+					   
+					   
+					 
+					  
+                     </div>
+
+                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  
+
+      </div>
+
+      
+                 		   
+					   <div class="row pull-right mT20 ">
+        <a href="">
+         <button onclick="writeData()"><b>Submit</b>
+         </button></a>
+                       </div>
+
+                  <!-- <div class="row pull-right mT20 ">
+                          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Submit</button>
+                      </div> -->
+
+                    </div>
+              </form>
+
+        </div>
+      
+               </form>
+
+         </div>
+      </div>
+  </section>  
+ 
+   
+
+
+ <!-- ============ End Form Section ============ -->
+
+ <div class="clearfix"></div>
+
+
+  <!-- ============ Start footer section ============ -->
+
+<br><br><br><br><br><br><br><br><br>
+  <footer class="fullWidth">
+    <div class="copyright pos-r">
+         <div class=" text-center">
+             BY MANSI JHAVERI(COMPS) AND FORUM SHAH(COMPS)
+          </div>
+     </div>
+   </footer>
+
+<!-- ============ end footer section ============ -->
+
+
+
+ <!-- ============ End container-fluid ============ -->
+
+
+           </div>
+
+           <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> </h4>
+                  </div>
+                  <div class="modal-body">
+                    <h3 class="color-g">Registration Complete – </h3>
+                    
+                        <div class="clearfix"></div>
+                   </div>
+                  <div class="clearfix"></div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">OK</button>
+                 </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+
+    <!-- Global jQuery plugin -->
+    <script type="text/javascript"  src="js/global.js"> </script>
+
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script>
+      var nice = false;
+      $(document).ready(function() {
+      nice = $("html").niceScroll();
+      });
+    </script>
+
+       <!-- mCustomScrollbar -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+      <script>
+         (function($){
+           $(window).load(function(){
+
+             $(".drops,.boxgrid").mCustomScrollbar({
+               scrollButtons:{
+                 enable:true
+               },
+             callbacks:{
+                 onScrollStart:function(){ myCallback(this,"#onScrollStart") },
+                 onScroll:function(){ myCallback(this,"#onScroll") },
+                 onTotalScroll:function(){ myCallback(this,"#onTotalScroll") },
+                 onTotalScrollOffset:60,
+                 onTotalScrollBack:function(){ myCallback(this,"#onTotalScrollBack") },
+                 onTotalScrollBackOffset:50,
+                 whileScrolling:function(){
+                   myCallback(this,"#whileScrolling");
+                   $("#mcs-top").text(this.mcs.top);
+                   $("#mcs-dragger-top").text(this.mcs.draggerTop);
+                   $("#mcs-top-pct").text(this.mcs.topPct+"%");
+                   $("#mcs-direction").text(this.mcs.direction);
+                   $("#mcs-total-scroll-offset").text("60");
+                   $("#mcs-total-scroll-back-offset").text("50");
+                 },
+                 alwaysTriggerOffsets:false
+               }
+             });
+
+             function myCallback(el,id){
+               if($(id).css("opacity")<1){return;}
+               var span=$(id).find("span");
+               clearTimeout(timeout);
+               span.addClass("on");
+               var timeout=setTimeout(function(){span.removeClass("on")},350);
+             }
+
+             $(".callbacks a").click(function(e){
+               e.preventDefault();
+               $(this).parent().toggleClass("off");
+               if($(e.target).parent().attr("id")==="alwaysTriggerOffsets"){
+                 var opts=$(".drops").data("mCS").opt;
+                 if(opts.callbacks.alwaysTriggerOffsets){
+                   opts.callbacks.alwaysTriggerOffsets=false;
+                 }else{
+                   opts.callbacks.alwaysTriggerOffsets=true;
+                 }
+               }
+             });
+
+           });
+         })(jQuery);
+       </script>
+    <script src="js/bootstrap-select.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('.bxslider').bxSlider({
+         auto:true
+       });
+     });
+ </script>
+<script>
+  function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+
+}
+</script>
+<script>
+  function yesNoCheck() {
+    if (document.getElementById('yescheck').checked) {
+        document.getElementById('ifyes').style.display = 'block';
+    }
+    else document.getElementById('ifyes').style.display = 'none';
+
+}
+</script>
+   <script src="js/jquery.bxslider.js"></script>
+   <script type='text/javascript' src="js/bootstrap-datepicker.min.js"></script>
+    <script type='text/javascript'>
+      $(function(){
+       $('.input-group.date').datepicker({
+         calendarWeeks: true,
+         todayHighlight: true,
+         autoclose: true,
+         format: 'dd-mm-yyyy',
+       });
+     });
+</script>
+
+   </body>
+
+</html>
